@@ -1,4 +1,4 @@
-package com.example.popularmovies_stage1;
+package com.aditya.popularmoviesstage2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -12,15 +12,13 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.popularmovies_stage1.adapters.MovieAdapter;
-import com.example.popularmovies_stage1.api.ApiInterface;
-import com.example.popularmovies_stage1.models.Movie;
-import com.example.popularmovies_stage1.utils.JsonUtils;
+import com.aditya.popularmoviesstage2.R;
+import com.aditya.popularmoviesstage2.adapters.MovieAdapter;
+import com.aditya.popularmoviesstage2.api.ApiInterface;
+import com.aditya.popularmoviesstage2.models.Movie;
+import com.aditya.popularmoviesstage2.utils.JsonUtils;
 
 import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.net.SocketAddress;
 import java.util.ArrayList;
 
 import okhttp3.ResponseBody;

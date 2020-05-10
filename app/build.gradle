@@ -5,11 +5,14 @@ android {
     buildToolsVersion "29.0.0"
 
     defaultConfig {
-        applicationId "com.example.popularmovies_stage1"
+        applicationId "com.aditya.popularmoviesstage2"
         minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+
+        renderscriptTargetApi 28 //must match target sdk and build tools
+        renderscriptSupportModeEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,4 +39,9 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+    implementation 'androidx.room:room-runtime:2.1.0'
+    annotationProcessor 'androidx.room:room-compiler:2.1.0'
 }

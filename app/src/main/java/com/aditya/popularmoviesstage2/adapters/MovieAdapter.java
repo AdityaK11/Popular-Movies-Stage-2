@@ -1,4 +1,4 @@
-package com.example.popularmovies_stage1.adapters;
+package com.aditya.popularmoviesstage2.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,9 +10,9 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.popularmovies_stage1.MovieDetails;
-import com.example.popularmovies_stage1.R;
-import com.example.popularmovies_stage1.models.Movie;
+import com.aditya.popularmoviesstage2.MovieDetails;
+import com.aditya.popularmoviesstage2.R;
+import com.aditya.popularmoviesstage2.models.Movie;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

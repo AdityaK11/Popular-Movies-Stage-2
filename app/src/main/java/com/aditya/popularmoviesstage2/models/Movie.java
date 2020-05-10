@@ -1,20 +1,47 @@
-package com.example.popularmovies_stage1.models;
+package com.aditya.popularmoviesstage2.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "movie")
 public class Movie implements Parcelable{
 
+    @PrimaryKey
+    private Integer id;
     private String title;
     private String posterPath;
     private String overview;
     private String releaseDate;
     private Double voterAverage;
+    private boolean isFavorite;
 
-    final String POSTER_BASE_URL = "https://image.tmdb.org/t/p/w185";
+    public String POSTER_BASE_URL = "https://image.tmdb.org/t/p/w185";
 
+    @Ignore
     public Movie() {
 
+    }
+
+    public Movie(Integer id, String title, String posterPath, String overview, String releaseDate, Double voterAverage, boolean isFavorite) {
+        this.id = id;
+        this.title = title;
+        this.posterPath = posterPath;
+        this.overview = overview;
+        this.releaseDate = releaseDate;
+        this.voterAverage = voterAverage;
+        this.isFavorite = isFavorite;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -57,6 +84,14 @@ public class Movie implements Parcelable{
         this.voterAverage = voterAverage;
     }
 
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -64,6 +99,7 @@ public class Movie implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
         dest.writeString(title);
         dest.writeString(posterPath);
         dest.writeString(overview);
@@ -72,6 +108,7 @@ public class Movie implements Parcelable{
     }
 
     public Movie(Parcel parcel) {
+        id = parcel.readInt();
         title = parcel.readString();
         posterPath = parcel.readString();
         overview = parcel.readString();
